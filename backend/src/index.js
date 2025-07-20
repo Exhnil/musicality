@@ -1,19 +1,35 @@
 import express from "express";
 import dotenv from "dotenv";
+import { clerkMiddleware } from "@clerk/express";
+import { connectDB } from "./lib/db.js";
+import fileUpload from "express-fileupload";
+import path from "path";
+
 import userRoutes from "./routes/user.routes.js";
 import authRoutes from "./routes/auth.routes.js";
 import songRoutes from "./routes/songs.routes.js";
 import adminRoutes from "./routes/admin.routes.js";
 import albumsRoute from "./routes/albums.route.js";
 import statsRoute from "./routes/stats.routes.js";
-import { connectDB } from "./lib/db.js";
 
 dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT;
+const __dirname = path.resolve();
 
-app.use(express.json())
+app.use(express.json());
+app.use(clerkMiddleware());
+app.use(
+  fileUpload({
+    useTempFiles: true,
+    tempFileDir: path.join(__dirname, "tmp"),
+    createParentPath: true,
+    limits: {
+      fileSize: 10 * 1024 * 1024, //10MB
+    },
+  })
+);
 
 app.use("/api/users", userRoutes);
 app.use("/api/auth", authRoutes);
@@ -21,6 +37,12 @@ app.use("/api/admin", adminRoutes);
 app.use("/api/songs", songRoutes);
 app.use("/api/albums", albumsRoute);
 app.use("/api/stats", statsRoute);
+
+app.use((error, req, res, next) => {
+  res
+    .status(500)
+    .json({ message: process.env.NODE_ENV === "prod" ? "dev" : error.message });
+});
 
 app.listen(PORT, () => {
   console.log("Listening on port " + PORT + "...");

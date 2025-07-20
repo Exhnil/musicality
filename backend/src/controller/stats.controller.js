@@ -1,0 +1,23 @@
+export const getStats = async (req, res, next) => {
+  try {
+    const [totalSongstotalUserstotalAlbums] = await Promise.all([
+      Song.countDocuments(),
+      User.countDocuments(),
+      Album.countDocuments(),
+      Song.aggregate([
+        { $unionWith: { coll: "albums", pipeline: [] } },
+        { $group: { _id: "$artist" } },
+        { $count: "count" },
+      ]),
+    ]);
+
+    res.status.json({
+      totalSongs,
+      totalUsers,
+      totalAlbums,
+      totalArtist: uniqueArtists[0]?.count || 0,
+    });
+  } catch (error) {
+    next(error);
+  }
+};
