@@ -4,22 +4,34 @@ import { useEffect } from "react";
 import FeaturedSection from "./components/FeaturedSection";
 import SectionGrid from "./components/SectionGrid";
 import { ScrollArea } from "@/components/ui/scroll-area";
+import { usePlayerStore } from "@/store/usePlayerStore";
 
 const HomePage = () => {
 
-    const { fetchFeatureSongs,
+    const {
         fetchMadeForYouSongs,
         fetchTrendingSongs,
+        fetchFeatureSongs,
         madeForYouSongs,
-        trendingSounds,
+        trendingSongs,
+        featuredSongs,
         isLoading,
     } = useMusicStore();
 
+    const { initializeQueue } = usePlayerStore()
+
     useEffect(() => {
-        fetchFeatureSongs();
         fetchMadeForYouSongs();
         fetchTrendingSongs();
-    }, [fetchFeatureSongs, fetchMadeForYouSongs, fetchTrendingSongs])
+        fetchFeatureSongs();
+    }, [fetchMadeForYouSongs, fetchTrendingSongs, fetchFeatureSongs]);
+
+    useEffect(() => {
+        if (madeForYouSongs.length > 0 && trendingSongs.length > 0 && featuredSongs.length > 0) {
+            const allSongs = [...featuredSongs, ...madeForYouSongs, ...trendingSongs];
+            initializeQueue(allSongs);
+        }
+    }, [initializeQueue, madeForYouSongs, trendingSongs, featuredSongs])
 
     return (
         <div className="rounded-md h-full bg-gradient-to-b from-zinc-800 to-zinc-800">
@@ -31,7 +43,7 @@ const HomePage = () => {
 
                     <div className="space-y-8">
                         <SectionGrid title="Made For You" songs={madeForYouSongs} isLoading={isLoading} />
-                        <SectionGrid title="Trending" songs={trendingSounds} isLoading={isLoading} />
+                        <SectionGrid title="Trending" songs={trendingSongs} isLoading={isLoading} />
                     </div>
                 </div>
             </ScrollArea>

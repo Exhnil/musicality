@@ -12,6 +12,7 @@ build/
 
 # Test Data
 frontend/public/
+backend/tmp/
 
 # Env
 .env

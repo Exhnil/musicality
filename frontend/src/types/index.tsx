@@ -2,7 +2,7 @@ export interface Song {
     _id: string;
     title: string;
     artist: string;
-    album: string | null;
+    albumId: string | null;
     imageUrl: string;
     audioUrl: string;
     duration: number;
@@ -24,4 +24,11 @@ export interface User {
     fullName: string;
     imageUrl: string;
 
+}
+
+export interface Stats {
+    totalSongs: number;
+    totalUsers: number;
+    totalAlbums: number;
+    totalArtist: number;
 }
