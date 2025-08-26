@@ -10,10 +10,6 @@ package-lock.json
 dist/
 build/
 
-# Test Data
-frontend/public/
-backend/tmp/
-
 # Env
 .env
 
