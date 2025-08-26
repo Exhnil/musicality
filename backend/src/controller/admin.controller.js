@@ -9,6 +9,7 @@ const uploadToCloudinary = async (file) => {
     });
     return result.secure_url;
   } catch (error) {
+    console.log(error);
     throw new Error("Error uploading to cloudinary", error);
   }
 };
