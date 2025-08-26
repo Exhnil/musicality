@@ -12,12 +12,17 @@ import songRoutes from "./routes/songs.routes.js";
 import adminRoutes from "./routes/admin.routes.js";
 import albumsRoute from "./routes/albums.route.js";
 import statsRoute from "./routes/stats.routes.js";
+import { createServer } from "http";
+import { initializeSocket } from "./lib/socket.js";
 
 dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT;
 const __dirname = path.resolve();
+
+const httpServer = createServer(app);
+initializeSocket(httpServer);
 
 app.use(
   cors({
@@ -53,7 +58,7 @@ app.use((error, req, res, next) => {
     .json({ message: process.env.NODE_ENV === "prod" ? "dev" : error.message });
 });
 
-app.listen(PORT, () => {
+httpServer.listen(PORT, () => {
   console.log("Listening on port " + PORT + "...");
   connectDB();
 });

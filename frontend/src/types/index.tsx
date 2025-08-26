@@ -21,6 +21,7 @@ export interface Album {
 
 export interface User {
     _id: string;
+    clerkId: string;
     fullName: string;
     imageUrl: string;
 
@@ -31,4 +32,12 @@ export interface Stats {
     totalUsers: number;
     totalAlbums: number;
     totalArtist: number;
+}
+
+export interface Message {
+    _id: string;
+    receiverId: string;
+    senderId: string;
+    content: string;
+    createdAt: string;
 }
