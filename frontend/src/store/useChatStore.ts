@@ -49,7 +49,7 @@ export const useChatStore = create<ChatStore>((set, get) => ({
       const response = await axiosInstance.get("/users");
       set({ users: response.data });
     } catch (error: any) {
-      set({ error: error.responde.data.message });
+      set({ error: error.response.data.message });
     } finally {
       set({ isLoading: false });
     }
@@ -100,7 +100,7 @@ export const useChatStore = create<ChatStore>((set, get) => ({
         }));
       });
 
-      socket.on("activity_update", ({ userId, activity }) => {
+      socket.on("activity_updated", ({ userId, activity }) => {
         set((state) => {
           const newActivities = new Map(state.userActivities);
           newActivities.set(userId, activity);

@@ -53,9 +53,12 @@ const FriendsActivity = () => {
                                                     <div className='mt-1 text-sm text-white font-medium truncate'>
                                                         {activity.replace("Playing ", "").split(" by ")[0]}
                                                     </div>
-                                                    <div className='text-xs text-zinc-400 truncate'>{activity.split(" by ")[1]}</div>
+                                                    <div className='text-xs text-zinc-400 truncate'>
+                                                        {activity.split(" by ")[1]}
+                                                    </div>
                                                 </div>
-                                            ) : (<div>Idle</div>
+                                            ) : (
+                                                <div className='mt-1 text-xs text-zinc-400'>Idle</div>
                                             )}
                                         </div>
                                     </div>
@@ -74,10 +77,15 @@ export default FriendsActivity
 const LoginPrompt = () => (
     <div className='h-full flex flex-col items-center justify-center p-6 text-center space-y-4'>
         <div className='relative'>
-            <div className='absolute -inset-1 bg-gradient-to-r from-emerald-500 to to-sky-500 rounded-full blur-lg opacity-75 animate-pulse' aria-hidden="true" />
+            <div className='absolute -inset-1 bg-gradient-to-r from-purple-500 to to-sky-500 rounded-full blur-lg opacity-75 animate-pulse' aria-hidden="true" />
             <div className='relative bg-zinc-900 rounded-full p-4'>
-                <HeadphonesIcon className='size-8 text-emerald-400' />
+                <HeadphonesIcon className='size-8 text-purple-400' />
             </div>
+        </div>
+
+        <div className='space-y-2 max-w-[250px]'>
+            <h3 className='text-lg font-semibold text-white'>See What Friends Are Playing</h3>
+            <p className='text-sm text-zinc-400'>Login to discover what music your friends are playing</p>
         </div>
     </div>
 )
