@@ -53,9 +53,7 @@ export const usePlayerStore = create<PlayerStore>((set, get) => ({
 
   setCurrentSong: (song: Song | null) => {
     if (!song) return;
-
-    const songIndex = get().queue.findIndex((s) => s._id === song._id);
-
+    
     const socket = useChatStore.getState().socket;
     if (socket.auth) {
       socket.emit("update_activity", {
@@ -63,6 +61,8 @@ export const usePlayerStore = create<PlayerStore>((set, get) => ({
         activity: "Playing " + song.title + " by " + song.artist,
       });
     }
+
+    const songIndex = get().queue.findIndex((s) => s._id === song._id);
 
     set({
       currentSong: song,
