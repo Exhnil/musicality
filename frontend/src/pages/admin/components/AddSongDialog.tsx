@@ -8,6 +8,7 @@ import { useMusicStore } from '@/store/useMusicStore'
 import { Plus, Upload } from 'lucide-react'
 import { useRef, useState } from 'react'
 import toast from 'react-hot-toast'
+import { useTranslation } from 'react-i18next'
 
 interface NewSong {
     title: string;
@@ -19,6 +20,7 @@ interface NewSong {
 export const AddSongDialog = () => {
 
     const { albums } = useMusicStore()
+    const { t } = useTranslation()
 
     const [songDialogOpen, setSongDialogOpen] = useState(false)
     const [isLoading, setIsLoading] = useState(false)
@@ -87,13 +89,13 @@ export const AddSongDialog = () => {
             <DialogTrigger asChild>
                 <Button className='bg-purple-500 hover:bg-purple-600 text-black'>
                     <Plus className='mr-2 h-4 w-4' />
-                    Add Song
+                    {t("songs.add_song")}
                 </Button>
             </DialogTrigger>
             <DialogContent className='bg-zinc-900 border-zinc-700 max-h-[80hv] overflow-auto'>
                 <DialogHeader>
-                    <DialogTitle>Add New Song</DialogTitle>
-                    <DialogDescription>Add a new song to the music library</DialogDescription>
+                    <DialogTitle>{t("songs.add_new_song")}</DialogTitle>
+                    <DialogDescription>{t("songs.add_new_song_description")}</DialogDescription>
                 </DialogHeader>
 
                 <div className='space-y-4 py-4'>
@@ -118,7 +120,7 @@ export const AddSongDialog = () => {
                         <div className='text-center'>
                             {files.image ? (
                                 <div className='space-y-2'>
-                                    <div className='text-sm text-purple-500'>Image selected:</div>
+                                    <div className='text-sm text-purple-500'>{t("songs.image_selected")}</div>
                                     <div className='text-xs text-zinc-400'>{files.image.name.slice(0, 20)}</div>
                                 </div>
                             ) : (
@@ -126,9 +128,9 @@ export const AddSongDialog = () => {
                                     <div className='p-3 bg-zinc-800 rounded-full inline-block mb-2'>
                                         <Upload className='h-6 w-6 text-zinc-400' />
                                     </div>
-                                    <div className='text-sm text-zinc-400 mb-2'>Upload cover</div>
+                                    <div className='text-sm text-zinc-400 mb-2'>{t("songs.upload_cover")}</div>
                                     <Button variant="outline" size="sm" className='text-xs'>
-                                        Choose File
+                                        {t("ui.choose_file")}
                                     </Button>
                                 </div>
                             )}
@@ -136,7 +138,7 @@ export const AddSongDialog = () => {
                     </div>
 
                     <div className='space-y-2'>
-                        <label className='text-sm font-medium'>Audio File</label>
+                        <label className='text-sm font-medium'>{t("songs.audio_file")}</label>
                         <div className='flex items-center gap-2'>
                             <Button variant="outline" onClick={() => audioInputRef.current?.click()} className='w-full'>
                                 {files.audio ? files.audio.name.slice(0, 20) : "Choose Audio File"}
@@ -145,7 +147,7 @@ export const AddSongDialog = () => {
                     </div>
 
                     <div className='space-y-2'>
-                        <label className='text-sm font-medium'>Title</label>
+                        <label className='text-sm font-medium'>{t("songs.title")}</label>
                         <Input
                             value={newSong.title}
                             onChange={(e) => setNewSong({ ...newSong, title: e.target.value })}
@@ -154,7 +156,7 @@ export const AddSongDialog = () => {
                     </div>
 
                     <div className='space-y-2'>
-                        <label className='text-sm font-medium'>Artist</label>
+                        <label className='text-sm font-medium'>{t("songs.artist")}</label>
                         <Input
                             value={newSong.artist}
                             onChange={(e) => setNewSong({ ...newSong, artist: e.target.value })}
@@ -163,7 +165,7 @@ export const AddSongDialog = () => {
                     </div>
 
                     <div className='space-y-2'>
-                        <label className='text-sm font-medium'>Duration (seconds)</label>
+                        <label className='text-sm font-medium'>{t("songs.duration_seconds")}</label>
                         <Input
                             type="number"
                             min="0"
@@ -174,7 +176,7 @@ export const AddSongDialog = () => {
                     </div>
 
                     <div className='space-y-2'>
-                        <label className='text-sm font-medium'>Album (Optional)</label>
+                        <label className='text-sm font-medium'>{t("songs.album_optional")}</label>
                         <Select
                             value={newSong.album}
                             onValueChange={(value) => setNewSong({ ...newSong, album: value })}
@@ -183,7 +185,7 @@ export const AddSongDialog = () => {
                                 <SelectValue placeholder="Select album" />
                             </SelectTrigger>
                             <SelectContent className='bg-zinc-800 border-zinc-800' >
-                                <SelectItem value='none'>No Album (Single)</SelectItem>
+                                <SelectItem value='none'>{t("songs.no_album_single")}</SelectItem>
                                 {albums.map((album) => (
                                     <SelectItem key={album._id} value={album._id}>
                                         {album.title}
@@ -196,10 +198,10 @@ export const AddSongDialog = () => {
 
                 <DialogFooter>
                     <Button variant="outline" onClick={() => setSongDialogOpen(false)} disabled={isLoading}>
-                        Cancel
+                        {t("ui.cancel")}
                     </Button>
                     <Button onClick={handleSubmit} disabled={isLoading}>
-                        {isLoading ? "Uploading..." : "Add Song"}
+                        {isLoading ? t("songs.uploading") : t("songs.add_song")}
                     </Button>
                 </DialogFooter>
             </DialogContent>

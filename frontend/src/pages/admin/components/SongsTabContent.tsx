@@ -2,18 +2,20 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Music } from 'lucide-react'
 import SongsTable from './SongsTable'
 import { AddSongDialog } from './AddSongDialog'
+import { useTranslation } from 'react-i18next'
 
 const SongsTabContent = () => {
+    const { t } = useTranslation()
     return (
-        <Card>
+        <Card className="bg-zinc-800/50 border-zinc-700/50">
             <CardHeader>
                 <div className='flex items-center justify-between'>
                     <div>
                         <CardTitle className='flex items-center gap-2'>
                             <Music className='size-5 text-purple-500' />
-                            Song Library
+                            {t("songs.songs_library")}
                         </CardTitle>
-                        <CardDescription>Manage the music tracks</CardDescription>
+                        <CardDescription>{t("songs.manage_tracks")}</CardDescription>
                     </div>
                     <AddSongDialog />
                 </div>

@@ -3,12 +3,14 @@ import { axiosInstance } from "@/lib/axios"
 import { useUser } from "@clerk/clerk-react"
 import { Loader } from "lucide-react"
 import { useEffect, useRef } from "react"
+import { useTranslation } from "react-i18next"
 import { useNavigate } from "react-router-dom"
 
 function AuthCallbackPage() {
     const { isLoaded, user } = useUser()
     const navigate = useNavigate()
     const syncAttempted = useRef(false)
+    const { t } = useTranslation()
 
     useEffect(() => {
         const syncUser = async () => {
@@ -37,8 +39,8 @@ function AuthCallbackPage() {
             <Card className="w-[90%] max-w-md bg-zinc-900 border-zinc-800">
                 <CardContent className="flex flex-col items-center gap-4 pt-6">
                     <Loader className="size-6 text-purple-500 animate-spin" />
-                    <h3 className="text-zinc-400 text-xl font-bold">Logged you in</h3>
-                    <p className="text-zinc-400 text-sm">Redirecting...</p>
+                    <h3 className="text-zinc-400 text-xl font-bold">{t("auth.logged_in")}</h3>
+                    <p className="text-zinc-400 text-sm">{t("auth.redirecting")}</p>
                 </CardContent>
             </Card>
         </div>
