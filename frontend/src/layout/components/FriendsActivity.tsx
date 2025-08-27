@@ -1,7 +1,7 @@
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
+import { ScrollArea } from '@/components/ui/scroll-area'
 import { useChatStore } from '@/store/useChatStore'
 import { useUser } from '@clerk/clerk-react'
-import { ScrollArea } from '@radix-ui/react-scroll-area'
 import { HeadphonesIcon, Music, Users } from 'lucide-react'
 import { useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
