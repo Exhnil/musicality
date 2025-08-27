@@ -2,14 +2,16 @@ import { Button } from '@/components/ui/button'
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table'
 import { useMusicStore } from '@/store/useMusicStore'
 import { Calendar, Trash2 } from 'lucide-react'
+import { useTranslation } from 'react-i18next'
 
 const SongsTable = () => {
     const { songs, isLoading, error, deleteSong } = useMusicStore()
+    const { t } = useTranslation()
 
     if (isLoading) {
         return (
             <div className='flex items-center justify-center py-8'>
-                <div className='text-zinc-400'>Loading songs...</div>
+                <div className='text-zinc-400'>{t("songs.loading_songs")}</div>
             </div>
         )
     }
@@ -28,10 +30,10 @@ const SongsTable = () => {
             <TableHeader>
                 <TableRow className='hover:bg-zinc-800/50'>
                     <TableHead className='w-[50px]'></TableHead>
-                    <TableHead>Title</TableHead>
-                    <TableHead>Artist</TableHead>
-                    <TableHead>Release Date</TableHead>
-                    <TableHead className='text-right'>Actions</TableHead>
+                    <TableHead>{t("table.title")}</TableHead>
+                    <TableHead>{t("table.artist")}</TableHead>
+                    <TableHead>{t("table.release_year")}</TableHead>
+                    <TableHead className='text-right'>{t("table.actions")}</TableHead>
                 </TableRow>
             </TableHeader>
 
@@ -55,7 +57,7 @@ const SongsTable = () => {
                                     variant={"ghost"}
                                     size={"sm"}
                                     className='text-red-400 hover:text-red-300 hover:bg-red-400/10'
-                                    onClick={()=> deleteSong(song._id)}>
+                                    onClick={() => deleteSong(song._id)}>
                                     <Trash2 className='size-4' />
                                 </Button>
                             </div>

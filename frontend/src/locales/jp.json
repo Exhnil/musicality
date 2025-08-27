@@ -1,0 +1,87 @@
+{
+  "auth": {
+    "continue_with_google": "Googleでつづける",
+    "logged_in": "ログインしました",
+    "redirecting": "リダイレクト中..."
+  },
+  "home": {
+    "good_afternoon": "こんにちは",
+    "made_for_you": "あなたのために",
+    "trending": "人気"
+  },
+  "navbar": {
+    "home": "ホーム",
+    "messages": "メッセージ",
+    "playlist": "プレイリスト",
+    "what_they_are_listening": "みんなが聞いているもの",
+    "see_what_friends_are_playing": "友達が聞いている音楽を見る",
+    "login_to_discover_friends_music": "友達の音楽を見るためにログインしてください",
+    "choose_a_friend_to_start_chatting": "友達をえらんでチャットをはじめる"
+  },
+  "errors": {
+    "not_found_404": "404",
+    "page_not_found": "ページが見つかりません",
+    "silence_back_to_sound": "ここにはしずかさしかありません。もっと音があるところへもどりましょう。",
+    "go_back": "もどる",
+    "back_to_home": "ホームへもどる",
+    "unauthorized": "権限がありません",
+    "no_conversation_selected": "会話がえらばれていません"
+  },
+  "player": {
+    "idle": "待機中"
+  },
+  "albums": {
+    "albums_library": "アルバムライブラリ",
+    "manage_collection": "アルバムコレクションを管理",
+    "add_album": "アルバムを追加",
+    "add_new_album": "新しいアルバムを追加",
+    "add_new_album_description": "コレクションに新しいアルバムを追加する",
+    "title": "タイトル",
+    "artist": "アーティスト",
+    "release_year": "発売年"
+  },
+  "songs": {
+    "songs_library": "曲ライブラリ",
+    "manage_tracks": "曲を管理",
+    "add_song": "曲を追加",
+    "add_new_song": "新しい曲を追加",
+    "add_new_song_description": "ライブラリに新しい曲を追加する",
+    "title": "タイトル",
+    "artist": "アーティスト",
+    "duration_seconds": "時間（秒）",
+    "album_optional": "アルバム（オプション）",
+    "no_album_single": "アルバムなし（シングル）",
+    "upload_cover": "カバーをアップロード",
+    "audio_file": "音声ファイル",
+    "image_selected": "選ばれた画像：",
+    "loading_songs": "曲を読み込み中..."
+  },
+  "actions": {
+    "show_all": "すべて表示"
+  },
+  "dashboard": {
+    "admin_dashboard": "管理者ダッシュボード",
+    "music_manager": "音楽マネージャー",
+    "manage_music_catalog": "音楽カタログを管理",
+    "albums": "アルバム",
+    "songs": "曲",
+    "total_songs": "曲の合計",
+    "total_albums": "アルバムの合計",
+    "total_artists": "アーティストの合計",
+    "total_users": "ユーザーの合計"
+  },
+  "table": {
+    "title": "タイトル",
+    "artist": "アーティスト",
+    "songs": "曲",
+    "release_year": "発売日",
+    "album": "アルバム",
+    "actions": "アクション"
+  },
+  "ui": {
+    "musicality": "ムシカリティー",
+    "close": "とじる",
+    "cancel": "キャンセル",
+    "choose_file": "ファイルを選ぶ"
+  }
+}

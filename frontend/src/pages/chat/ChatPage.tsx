@@ -7,6 +7,7 @@ import ChatHeader from "./ChatHeader"
 import { ScrollArea } from "@/components/ui/scroll-area"
 import { Avatar, AvatarImage } from "@/components/ui/avatar"
 import MessageInput from "./components/MessageInput"
+import { useTranslation } from "react-i18next"
 
 
 const formatTime = (date: string) => {
@@ -78,12 +79,15 @@ const ChatPage = () => {
 
 export default ChatPage
 
-const NoConversationPlaceholder = () => (
-    <div className="flex flex-col items-center justify-center h-full space-y-6">
-        <img src="/musicality.png" alt="Musicality" className="size-16 rounded-full animate-bounce" />
-        <div className="text-center">
-            <h3 className="text-zinc-300 text-lg font-medium mb-1">No Conversation selected</h3>
-            <p className="text-zinc-500 text-sm">Choose a friend to start chatting</p>
+const NoConversationPlaceholder = () => {
+    const { t } = useTranslation()
+    return (
+        <div className="flex flex-col items-center justify-center h-full space-y-6">
+            <img src="/musicality.png" alt="Musicality" className="size-16 rounded-full animate-bounce" />
+            <div className="text-center">
+                <h3 className="text-zinc-300 text-lg font-medium mb-1">{t("message.no_conversation_selected")}</h3>
+                <p className="text-zinc-500 text-sm">{t("messages.choose_a_friend")}</p>
+            </div>
         </div>
-    </div>
-)
+    )
+}

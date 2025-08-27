@@ -7,8 +7,10 @@ import { SignedIn } from "@clerk/clerk-react"
 import { HomeIcon, Library, MessageCircle } from "lucide-react"
 import { useEffect } from "react"
 import { Link } from "react-router-dom"
+import { useTranslation } from "react-i18next"
 
 const LeftSidebar = () => {
+    const { t } = useTranslation();
     const { albums, fetchAlbums, isLoading } = useMusicStore()
 
     useEffect(() => {
@@ -26,7 +28,7 @@ const LeftSidebar = () => {
                         }
                     ))}>
                         <HomeIcon className="mr-2 size-5" />
-                        <span className="hidden md:inline">Home</span>
+                        <span className="hidden md:inline">{t("navbar.home")}</span>
                     </Link>
 
                     <SignedIn>
@@ -37,7 +39,7 @@ const LeftSidebar = () => {
                             }
                         ))}>
                             <MessageCircle className="mr-2 size-5" />
-                            <span className="hidden md:inline">Messages</span>
+                            <span className="hidden md:inline">{t("navbar.messages")}</span>
                         </Link>
                     </SignedIn>
                 </div>
@@ -47,7 +49,7 @@ const LeftSidebar = () => {
                 <div className="flex items-center justify-between mb-4">
                     <div className="flex items-center text-white px-2">
                         <Library className="size-5 mr-2" />
-                        <span className="hidden md:inline">Playlist</span>
+                        <span className="hidden md:inline">{t("navbar.playlist")}</span>
                     </div>
                 </div>
 

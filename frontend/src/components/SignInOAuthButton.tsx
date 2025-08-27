@@ -1,8 +1,10 @@
 
 import { useSignIn } from '@clerk/clerk-react'
 import { Button } from './ui/button'
+import { useTranslation } from 'react-i18next'
 
 export const SignInOAuthButton = () => {
+    const { t } = useTranslation()
     const { signIn, isLoaded } = useSignIn()
     if (!isLoaded) {
         return null
@@ -18,7 +20,7 @@ export const SignInOAuthButton = () => {
 
     return (
         <Button onClick={signInWithGoogle} variant="secondary" className='w-full cursor-pointer text-white border-zinc-200 h-11'>
-            Continue with Google
+            {t("auth.continue_with_google")}
         </Button>
     )
 }
