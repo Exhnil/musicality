@@ -1,0 +1,87 @@
+{
+  "auth": {
+    "continue_with_google": "Continuer avec Google",
+    "logged_in": "Connexion réussie",
+    "redirecting": "Redirection..."
+  },
+  "home": {
+    "good_afternoon": "Bonjour",
+    "made_for_you": "Pour vous",
+    "trending": "Tendances"
+  },
+  "navbar": {
+    "home": "Accueil",
+    "messages": "Messages",
+    "playlist": "Playlist",
+    "what_they_are_listening": "Ce qu'ils écoutent",
+    "see_what_friends_are_playing": "Voir ce que vos amis écoutent",
+    "login_to_discover_friends_music": "Connectez-vous pour découvrir la musique de vos amis",
+    "choose_a_friend_to_start_chatting": "Choisissez un ami pour commencer à discuter"
+  },
+  "errors": {
+    "not_found_404": "404",
+    "page_not_found": "Page non trouvée",
+    "silence_back_to_sound": "Il n’y a que du silence ici. Retournons dans un endroit avec plus de son.",
+    "go_back": "Retour",
+    "back_to_home": "Retour à l’accueil",
+    "unauthorized": "Non autorisé",
+    "no_conversation_selected": "Aucune conversation sélectionnée"
+  },
+  "player": {
+    "idle": "Inactif"
+  },
+  "albums": {
+    "albums_library": "Bibliothèque d’albums",
+    "manage_collection": "Gérer la collection d’albums",
+    "add_album": "Ajouter un album",
+    "add_new_album": "Ajouter un nouvel album",
+    "add_new_album_description": "Ajouter un nouvel album à la collection",
+    "title": "Titre",
+    "artist": "Artiste",
+    "release_year": "Année de sortie"
+  },
+  "songs": {
+    "songs_library": "Bibliothèque de chansons",
+    "manage_tracks": "Gérer les morceaux",
+    "add_song": "Ajouter une chanson",
+    "add_new_song": "Ajouter une nouvelle chanson",
+    "add_new_song_description": "Ajouter une nouvelle chanson à la bibliothèque",
+    "title": "Titre",
+    "artist": "Artiste",
+    "duration_seconds": "Durée (secondes)",
+    "album_optional": "Album (optionnel)",
+    "no_album_single": "Pas d’album (Single)",
+    "upload_cover": "Téléverser la pochette",
+    "audio_file": "Fichier audio",
+    "image_selected": "Image sélectionnée :",
+    "loading_songs": "Chargement des chansons..."
+  },
+  "actions": {
+    "show_all": "Tout afficher"
+  },
+  "dashboard": {
+    "admin_dashboard": "Tableau de bord administrateur",
+    "music_manager": "Gestionnaire de musique",
+    "manage_music_catalog": "Gérer le catalogue musical",
+    "albums": "Albums",
+    "songs": "Chansons",
+    "total_songs": "Total chansons",
+    "total_albums": "Total albums",
+    "total_artists": "Total artistes",
+    "total_users": "Total utilisateurs"
+  },
+  "table": {
+    "title": "Titre",
+    "artist": "Artiste",
+    "songs": "Chansons",
+    "release_year": "Date de sortie",
+    "album": "Album",
+    "actions": "Actions"
+  },
+  "ui": {
+    "musicality": "Musicality",
+    "close": "Fermer",
+    "cancel": "Annuler",
+    "choose_file": "Choisir un fichier"
+  }
+}

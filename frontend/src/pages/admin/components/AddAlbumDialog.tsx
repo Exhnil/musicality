@@ -6,6 +6,7 @@ import { axiosInstance } from "@/lib/axios"
 import { Plus, Upload } from "lucide-react";
 import { useRef, useState } from "react"
 import toast from "react-hot-toast"
+import { useTranslation } from "react-i18next";
 
 interface NewAlbum {
     title: string;
@@ -14,6 +15,7 @@ interface NewAlbum {
 }
 
 const AddAlbumDialog = () => {
+    const { t } = useTranslation()
     const [albumDialogOpen, setAlbumDialogOpen] = useState(false)
     const [isLoading, setIsLoading] = useState(false)
     const [newAlbum, setNewAlbum] = useState<NewAlbum>({
@@ -74,15 +76,15 @@ const AddAlbumDialog = () => {
     return (
         <Dialog open={albumDialogOpen} onOpenChange={setAlbumDialogOpen}>
             <DialogTrigger asChild>
-                <Button className="">
-                    <Plus className="" />
-                    Add Album
+                <Button className="bg-violet-500 hover:bg-violet-600 text-white">
+                    <Plus className="mr-2 h-4 w-4" />
+                    {t("albums.add_album")}
                 </Button>
             </DialogTrigger>
             <DialogContent className="bg-zinc-900 border-zinc-700">
                 <DialogHeader>
-                    <DialogTitle>Add New Album</DialogTitle>
-                    <DialogDescription>Add a new album to the collection</DialogDescription>
+                    <DialogTitle>{t("albums.add_new_album")}</DialogTitle>
+                    <DialogDescription>{t("albums.add_new_album_description")}</DialogDescription>
                 </DialogHeader>
                 <div className="space-y-4 py-4">
                     <input
@@ -104,12 +106,12 @@ const AddAlbumDialog = () => {
                                 {imageFile ? imageFile.name : "Upload album cover"}
                             </div>
                             <Button variant="outline" size="sm" className="text-xs">
-                                Choose File
+                                {t("ui.choose_file")}
                             </Button>
                         </div>
                     </div>
                     <div className="space-y-2">
-                        <label className="text-sm font-medium">Title</label>
+                        <label className="text-sm font-medium">{t("albums.title")}</label>
                         <Input
                             value={newAlbum.title}
                             onChange={(e) => setNewAlbum({ ...newAlbum, title: e.target.value })}
@@ -118,7 +120,7 @@ const AddAlbumDialog = () => {
                         />
                     </div>
                     <div className="space-y-2">
-                        <label className="text-sm font-medium">Artist</label>
+                        <label className="text-sm font-medium">{t("albums.artist")}</label>
                         <Input
                             value={newAlbum.artist}
                             onChange={(e) => setNewAlbum({ ...newAlbum, artist: e.target.value })}
@@ -127,7 +129,7 @@ const AddAlbumDialog = () => {
                         />
                     </div>
                     <div className="space-y-2">
-                        <label className="text-sm font-medium">Release Year</label>
+                        <label className="text-sm font-medium">{t("albums.release_year")}</label>
                         <Input
                             type="number"
                             value={newAlbum.releaseYear}
@@ -141,13 +143,13 @@ const AddAlbumDialog = () => {
                 </div>
                 <DialogFooter>
                     <Button variant="outline" onClick={() => setAlbumDialogOpen(false)} disabled={isLoading}>
-                        Cancel
+                        {t("ui.cancel")}
                     </Button>
                     <Button
                         onClick={handleSubmit}
                         className="bg-violet-500 hover:bg-violet-600"
                         disabled={isLoading || !imageFile || !newAlbum.title || !newAlbum.artist}>
-                        {isLoading ? "Creating..." : "Add Album"}
+                        {isLoading ? t("albums.creating") : t("albums.add_album")}
                     </Button>
                 </DialogFooter>
             </DialogContent>

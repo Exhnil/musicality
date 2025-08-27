@@ -4,6 +4,7 @@ import { useMusicStore } from "@/store/useMusicStore"
 import { usePlayerStore } from "@/store/usePlayerStore";
 import { Clock, Pause, Play } from "lucide-react";
 import { useEffect } from "react"
+import { useTranslation } from "react-i18next";
 import { useParams } from "react-router-dom"
 
 const formatDuration = (seconds: number) => {
@@ -16,6 +17,7 @@ const AlbumPage = () => {
     const { albumId } = useParams();
     const { fetchAlbumById, currentAlbum, isLoading } = useMusicStore();
     const { currentSong, isPlaying, playAlbum, togglePlay } = usePlayerStore();
+    const { t } = useTranslation()
 
     useEffect(() => {
         if (albumId) fetchAlbumById(albumId);
@@ -48,11 +50,11 @@ const AlbumPage = () => {
                         <div className="flex p-6 gap-6 pb-8">
                             <img className="w-[240px] h-[240px] shadow-xl rounded" src={currentAlbum?.imageUrl} alt={currentAlbum?.title} />
                             <div className="flex flex-col justify-end">
-                                <p className="text-sm font-medium">Album</p>
+                                <p className="text-sm font-medium">{t("albums.album")}</p>
                                 <h1 className="text-7xl font-bold my-4">{currentAlbum?.title}</h1>
                                 <div className="flex items-center gap-2 text-sm text-zinc-100">
                                     <span className="font-medium text-white">{currentAlbum?.artist}</span>
-                                    <span>• {currentAlbum?.songs.length} songs</span>
+                                    <span>• {currentAlbum?.songs.length} {t("album.song")}</span>
                                     <span>• {currentAlbum?.releaseYear}</span>
                                 </div>
                             </div>
@@ -75,8 +77,8 @@ const AlbumPage = () => {
                             <div className="grid grid-cols-[16px_4fr_2fr_1fr] gap-4 px-10 py-2 text-sm
                         text-zinc-400 border-b border-white/5">
                                 <div>#</div>
-                                <div>Title</div>
-                                <div>Release Date</div>
+                                <div>{t("table.title")}</div>
+                                <div>{t("table.release_year")}</div>
                                 <div>
                                     <Clock className="h-4 w-4" />
                                 </div>

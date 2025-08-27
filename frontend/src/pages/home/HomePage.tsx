@@ -5,8 +5,11 @@ import FeaturedSection from "./components/FeaturedSection";
 import SectionGrid from "./components/SectionGrid";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { usePlayerStore } from "@/store/usePlayerStore";
+import { useTranslation } from "react-i18next";
 
 const HomePage = () => {
+
+    const { t } = useTranslation()
 
     const {
         fetchMadeForYouSongs,
@@ -38,12 +41,12 @@ const HomePage = () => {
             <Topbar />
             <ScrollArea className="h-[calc(100vh-180px)]">
                 <div className="p-4 sm:p-6">
-                    <h1 className="text-2xl sm:text-3xl font-bold mb-6">Good Afternoon</h1>
+                    <h1 className="text-2xl sm:text-3xl font-bold mb-6">{t("home.good_afternoon")}</h1>
                     <FeaturedSection />
 
                     <div className="space-y-8">
-                        <SectionGrid title="Made For You" songs={madeForYouSongs} isLoading={isLoading} />
-                        <SectionGrid title="Trending" songs={trendingSongs} isLoading={isLoading} />
+                        <SectionGrid title={t("home.made_for_you")} songs={madeForYouSongs} isLoading={isLoading} />
+                        <SectionGrid title={t("home.trending")} songs={trendingSongs} isLoading={isLoading} />
                     </div>
                 </div>
             </ScrollArea>

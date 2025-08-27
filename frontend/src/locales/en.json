@@ -1,0 +1,87 @@
+{
+  "auth": {
+    "continue_with_google": "Continue with Google",
+    "logged_in": "Logged you in",
+    "redirecting": "Redirecting..."
+  },
+  "home": {
+    "good_afternoon": "Good Afternoon",
+    "made_for_you": "Made For You",
+    "trending": "Trending"
+  },
+  "navbar": {
+    "home": "Home",
+    "messages": "Messages",
+    "playlist": "Playlist",
+    "what_they_are_listening": "What they are listening to",
+    "see_what_friends_are_playing": "See What your Friends Are Playing",
+    "login_to_discover_friends_music": "Login to discover what music your friends are playing",
+    "choose_a_friend_to_start_chatting": "Choose a friend to start chatting"
+  },
+  "errors": {
+    "not_found_404": "404",
+    "page_not_found": "Page not found",
+    "silence_back_to_sound": "There is only silence here. Let's go back somewhere more with more sound.",
+    "go_back": "Go Back",
+    "back_to_home": "Back to Home",
+    "unauthorized": "Unauthorized",
+    "no_conversation_selected": "No Conversation selected"
+  },
+  "player": {
+    "idle": "Idle"
+  },
+  "albums": {
+    "albums_library": "Albums Library",
+    "manage_collection": "Manage the album collection",
+    "add_album": "Add Album",
+    "add_new_album": "Add New Album",
+    "add_new_album_description": "Add a new album to the collection",
+    "title": "Title",
+    "artist": "Artist",
+    "release_year": "Release Year"
+  },
+  "songs": {
+    "songs_library": "Song Library",
+    "manage_tracks": "Manage the music tracks",
+    "add_song": "Add Song",
+    "add_new_song": "Add New Song",
+    "add_new_song_description": "Add a new song to the music library",
+    "title": "Title",
+    "artist": "Artist",
+    "duration_seconds": "Duration (seconds)",
+    "album_optional": "Album (Optional)",
+    "no_album_single": "No Album (Single)",
+    "upload_cover": "Upload cover",
+    "audio_file": "Audio File",
+    "image_selected": "Image selected:",
+    "loading_songs": "Loading songs..."
+  },
+  "actions": {
+    "show_all": "Show All"
+  },
+  "dashboard": {
+    "admin_dashboard": "Admin Dashboard",
+    "music_manager": "Music Manager",
+    "manage_music_catalog": "Manage the music catalog",
+    "albums": "Albums",
+    "songs": "Songs",
+    "total_songs": "Total Songs",
+    "total_albums": "Total Albums",
+    "total_artists": "Total Artists",
+    "total_users": "Total Users"
+  },
+  "table": {
+    "title": "Title",
+    "artist": "Artist",
+    "songs": "Songs",
+    "release_year": "Release Date",
+    "album": "Album",
+    "actions": "Actions"
+  },
+  "ui": {
+    "musicality": "Musicality",
+    "close": "Close",
+    "cancel": "Cancel",
+    "choose_file": "Choose File"
+  }
+}
