@@ -38,7 +38,10 @@
     "add_new_album_description": "Add a new album to the collection",
     "title": "Title",
     "artist": "Artist",
-    "release_year": "Release Year"
+    "release_year": "Release Year",
+    "creating": "Creating...",
+    "albums": "Album",
+    "song": "songs"
   },
   "songs": {
     "songs_library": "Song Library",
@@ -54,7 +57,8 @@
     "upload_cover": "Upload cover",
     "audio_file": "Audio File",
     "image_selected": "Image selected:",
-    "loading_songs": "Loading songs..."
+    "loading_songs": "Loading songs...",
+    "uploading": "Uploading..."
   },
   "actions": {
     "show_all": "Show All"
