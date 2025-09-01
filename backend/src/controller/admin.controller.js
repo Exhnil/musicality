@@ -39,7 +39,7 @@ export const createSong = async (req, res, next) => {
 
     if (albumId) {
       await Album.findByIdAndUpdate(albumId, {
-        $push: { song: song._id },
+        $push: { songs: song._id },
       });
     }
     res.send(201).json({ message: "Song created" });

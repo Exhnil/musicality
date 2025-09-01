@@ -44,7 +44,7 @@
     "artist": "Artist",
     "release_year": "Release Year",
     "creating": "Creating...",
-    "albums": "Album",
+    "album": "Album",
     "song": "songs",
     "album_created": "Album created successfully",
     "album_deleted": "Album deleted successfully"

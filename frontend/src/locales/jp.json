@@ -44,7 +44,7 @@
     "artist": "アーティスト",
     "release_year": "発売年",
     "creating": "作成中...",
-    "albums": "アルバム",
+    "album": "アルバム",
     "song": "曲",
     "album_created": "アルバムが作成(さくせい)されました",
     "album_deleted": "アルバムが削除(さくじょ)されました"
