@@ -5,17 +5,15 @@ import en from "./locales/en.json";
 import fr from "./locales/fr.json";
 import jp from "./locales/jp.json";
 
-i18n
-  .use(initReactI18next)
-  .init({
-    resources: {
-      en: { translation: en },
-      fr: { translation: fr },
-      jp: { translation: jp },
-    },
-    fallbackLng: "en",
-    lng: "jp",
-    interpolation: { escapeValue: false },
-  });
+i18n.use(initReactI18next).init({
+  resources: {
+    en: { translation: en },
+    fr: { translation: fr },
+    jp: { translation: jp },
+  },
+  fallbackLng: "en",
+  lng: localStorage.getItem("lng") || "en",
+  interpolation: { escapeValue: false },
+});
 
 export default i18n;

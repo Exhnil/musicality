@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { axiosInstance } from "@/lib/axios";
 import type { Album, Song, Stats } from "@/types";
+import i18next from "i18next";
 import toast from "react-hot-toast";
 import { create } from "zustand";
 
@@ -141,9 +142,9 @@ export const useMusicStore = create<MusicStore>((set) => ({
       set((state) => ({
         songs: state.songs.filter((song) => song._id),
       }));
-      toast.success("Song deleted successfully");
+      toast.success(i18next.t("songs.song_deleted"));
     } catch (error: any) {
-      toast.error("Error while deleting the song");
+      toast.error(i18next.t("errors.song_error_deletion"));
       set({ error: error.response.data.message });
     } finally {
       set({ isLoading: false });
@@ -162,9 +163,9 @@ export const useMusicStore = create<MusicStore>((set) => ({
             : song
         ),
       }));
-      toast.success("Song deleted successfully");
+      toast.success(i18next.t("albums.album_deleted"));
     } catch (error: any) {
-      toast.error("Error while deleting the song");
+      toast.error(i18next.t("errors.album_error_deletion"));
       set({ error: error.response.data.message });
     } finally {
       set({ isLoading: false });

@@ -40,7 +40,7 @@ const AddAlbumDialog = () => {
 
         try {
             if (!imageFile) {
-                return toast.error("Please upload an image")
+                return toast.error(t("error.upload_image"))
             }
 
             const formData = new FormData();
@@ -63,10 +63,10 @@ const AddAlbumDialog = () => {
 
             setImageFile(null)
             setAlbumDialogOpen(false)
-            toast.success("Album created successfully")
+            toast.success(t("albums.album_created"))
 
         } catch (error: any) {
-            toast.error("Failed to create album: " + error.message)
+            toast.error(t("errors.album_failed") + error.message)
             console.log(error)
         } finally {
             setIsLoading(false)
@@ -116,7 +116,7 @@ const AddAlbumDialog = () => {
                             value={newAlbum.title}
                             onChange={(e) => setNewAlbum({ ...newAlbum, title: e.target.value })}
                             className="bg-zinc-800 border-zinc-700"
-                            placeholder="Enter album title"
+                            placeholder={t("ui.album_title_placeholder")}
                         />
                     </div>
                     <div className="space-y-2">
@@ -125,7 +125,7 @@ const AddAlbumDialog = () => {
                             value={newAlbum.artist}
                             onChange={(e) => setNewAlbum({ ...newAlbum, artist: e.target.value })}
                             className="bg-zinc-800 border-zinc-700"
-                            placeholder="Enter album artist"
+                            placeholder={t("ui.album_artist_placeholder")}
                         />
                     </div>
                     <div className="space-y-2">
@@ -135,7 +135,7 @@ const AddAlbumDialog = () => {
                             value={newAlbum.releaseYear}
                             onChange={(e) => setNewAlbum({ ...newAlbum, releaseYear: e.target.value })}
                             className="bg-zinc-800 border-zinc-700"
-                            placeholder="Enter release year"
+                            placeholder={t("ui.album_release_placeholder")}
                             min={1900}
                             max={new Date().getFullYear()}
                         />

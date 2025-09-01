@@ -15,8 +15,7 @@
     "playlist": "Playlist",
     "what_they_are_listening": "What they are listening to",
     "see_what_friends_are_playing": "See What your Friends Are Playing",
-    "login_to_discover_friends_music": "Login to discover what music your friends are playing",
-    "choose_a_friend_to_start_chatting": "Choose a friend to start chatting"
+    "login_to_discover_friends_music": "Login to discover what music your friends are playing"
   },
   "errors": {
     "not_found_404": "404",
@@ -25,7 +24,12 @@
     "go_back": "Go Back",
     "back_to_home": "Back to Home",
     "unauthorized": "Unauthorized",
-    "no_conversation_selected": "No Conversation selected"
+    "upload_image": "Please upload an image",
+    "album_failed": "Failed to create album: ",
+    "upload_both_image_audio": "Please upload both audio and image files",
+    "song_failed": "Failed to add song: ",
+    "song_error_deletion": "Error while deleting the song",
+    "album_error_deletion": "Error while deleting the album"
   },
   "player": {
     "idle": "Idle"
@@ -41,7 +45,9 @@
     "release_year": "Release Year",
     "creating": "Creating...",
     "albums": "Album",
-    "song": "songs"
+    "song": "songs",
+    "album_created": "Album created successfully",
+    "album_deleted": "Album deleted successfully"
   },
   "songs": {
     "songs_library": "Song Library",
@@ -58,7 +64,9 @@
     "audio_file": "Audio File",
     "image_selected": "Image selected:",
     "loading_songs": "Loading songs...",
-    "uploading": "Uploading..."
+    "uploading": "Uploading...",
+    "song_created": "Song added successfully",
+    "song_deleted": "Song deleted successfully"
   },
   "actions": {
     "show_all": "Show All"
@@ -86,6 +94,15 @@
     "musicality": "Musicality",
     "close": "Close",
     "cancel": "Cancel",
-    "choose_file": "Choose File"
+    "choose_file": "Choose File",
+    "album_title_placeholder": "Enter album title",
+    "album_artist_placeholder": "Enter album artist",
+    "album_release_placeholder": "Enter release year",
+    "select_album_placeholder":"Select album",
+    "type_placeholder":"Type a message"
+  },
+  "messages": {
+    "no_conversation_selected": "No Conversation selected",
+    "choose_a_friend": "Choose a friend to start chatting"
   }
 }
