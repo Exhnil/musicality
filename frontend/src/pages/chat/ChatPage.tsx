@@ -85,7 +85,7 @@ const NoConversationPlaceholder = () => {
         <div className="flex flex-col items-center justify-center h-full space-y-6">
             <img src="/musicality.png" alt="Musicality" className="size-16 rounded-full animate-bounce" />
             <div className="text-center">
-                <h3 className="text-zinc-300 text-lg font-medium mb-1">{t("message.no_conversation_selected")}</h3>
+                <h3 className="text-zinc-300 text-lg font-medium mb-1">{t("messages.no_conversation_selected")}</h3>
                 <p className="text-zinc-500 text-sm">{t("messages.choose_a_friend")}</p>
             </div>
         </div>
