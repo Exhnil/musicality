@@ -54,7 +54,7 @@ const AlbumPage = () => {
                                 <h1 className="text-7xl font-bold my-4">{currentAlbum?.title}</h1>
                                 <div className="flex items-center gap-2 text-sm text-zinc-100">
                                     <span className="font-medium text-white">{currentAlbum?.artist}</span>
-                                    <span>• {currentAlbum?.songs.length} {t("album.song")}</span>
+                                    <span>• {currentAlbum?.songs.length} {t("albums.song")}</span>
                                     <span>• {currentAlbum?.releaseYear}</span>
                                 </div>
                             </div>

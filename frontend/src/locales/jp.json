@@ -38,7 +38,10 @@
     "add_new_album_description": "コレクションに新しいアルバムを追加する",
     "title": "タイトル",
     "artist": "アーティスト",
-    "release_year": "発売年"
+    "release_year": "発売年",
+    "creating": "作成中...",
+    "albums": "アルバム",
+    "song": "曲"
   },
   "songs": {
     "songs_library": "曲ライブラリ",
@@ -54,7 +57,8 @@
     "upload_cover": "カバーをアップロード",
     "audio_file": "音声ファイル",
     "image_selected": "選ばれた画像：",
-    "loading_songs": "曲を読み込み中..."
+    "loading_songs": "曲を読み込み中...",
+    "uploading": "アップロード中..."
   },
   "actions": {
     "show_all": "すべて表示"

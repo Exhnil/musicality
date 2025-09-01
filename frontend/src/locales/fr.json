@@ -38,7 +38,10 @@
     "add_new_album_description": "Ajouter un nouvel album à la collection",
     "title": "Titre",
     "artist": "Artiste",
-    "release_year": "Année de sortie"
+    "release_year": "Année de sortie",
+    "creating": "En cours de création...",
+    "albums": "Album",
+    "song": "musiques"
   },
   "songs": {
     "songs_library": "Bibliothèque de chansons",
@@ -54,7 +57,8 @@
     "upload_cover": "Téléverser la pochette",
     "audio_file": "Fichier audio",
     "image_selected": "Image sélectionnée :",
-    "loading_songs": "Chargement des chansons..."
+    "loading_songs": "Chargement des chansons...",
+    "uploading": "En cours de chargement..."
   },
   "actions": {
     "show_all": "Tout afficher"
