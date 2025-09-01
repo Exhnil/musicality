@@ -15,8 +15,7 @@
     "playlist": "プレイリスト",
     "what_they_are_listening": "みんなが聞いているもの",
     "see_what_friends_are_playing": "友達が聞いている音楽を見る",
-    "login_to_discover_friends_music": "友達の音楽を見るためにログインしてください",
-    "choose_a_friend_to_start_chatting": "友達をえらんでチャットをはじめる"
+    "login_to_discover_friends_music": "友達の音楽を見るためにログインしてください"
   },
   "errors": {
     "not_found_404": "404",
@@ -25,7 +24,12 @@
     "go_back": "もどる",
     "back_to_home": "ホームへもどる",
     "unauthorized": "権限がありません",
-    "no_conversation_selected": "会話がえらばれていません"
+    "upload_image": "画像(がぞう)をアップロードしてください",
+    "album_failed": "アルバムの作成(さくせい)に失敗(しっぱい)しました：",
+    "upload_both_image_audio": "音声(おんせい)ファイルと画像(がぞう)の両方(りょうほう)をアップロードしてください",
+    "song_failed": "曲(きょく)の追加(ついか)に失敗(しっぱい)しました：",
+    "song_error_deletion": "曲(きょく)の削除(さくじょ)中にエラーが発生(はっせい)しました",
+    "album_error_deletion": "アルバムの削除(さくじょ)中にエラーが発生(はっせい)しました"
   },
   "player": {
     "idle": "待機中"
@@ -41,7 +45,9 @@
     "release_year": "発売年",
     "creating": "作成中...",
     "albums": "アルバム",
-    "song": "曲"
+    "song": "曲",
+    "album_created": "アルバムが作成(さくせい)されました",
+    "album_deleted": "アルバムが削除(さくじょ)されました"
   },
   "songs": {
     "songs_library": "曲ライブラリ",
@@ -58,7 +64,9 @@
     "audio_file": "音声ファイル",
     "image_selected": "選ばれた画像：",
     "loading_songs": "曲を読み込み中...",
-    "uploading": "アップロード中..."
+    "uploading": "アップロード中...",
+    "song_created": "曲(きょく)が追加(ついか)されました",
+    "song_deleted": "曲(きょく)が削除(さくじょ)されました"
   },
   "actions": {
     "show_all": "すべて表示"
@@ -86,6 +94,15 @@
     "musicality": "ムシカリティー",
     "close": "とじる",
     "cancel": "キャンセル",
-    "choose_file": "ファイルを選ぶ"
+    "choose_file": "ファイルを選ぶ",
+    "album_title_placeholder": "アルバムのタイトルを入力してください",
+    "album_artist_placeholder": "アルバムのアーティスト名を入力してください",
+    "album_release_placeholder": "リリース年を入力してください",
+    "select_album_placeholder": "アルバムを選択してください",
+    "type_placeholder": "メッセージを入力してください"
+  },
+  "messages": {
+    "no_conversation_selected": "会話がえらばれていません",
+    "choose_a_friend": "友達をえらんでチャットをはじめる"
   }
 }

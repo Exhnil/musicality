@@ -32,7 +32,7 @@ export const createSong = async (req, res, next) => {
       audioUrl,
       imageUrl,
       duration,
-      albumid: albumId || null,
+      albumId: albumId || null,
     });
 
     await song.save();

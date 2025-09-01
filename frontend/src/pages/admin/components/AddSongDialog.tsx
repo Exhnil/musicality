@@ -44,7 +44,7 @@ export const AddSongDialog = () => {
         setIsLoading(true);
         try {
             if (!files.audio || !files.image) {
-                return toast.error("Please upload both audio and image files")
+                return toast.error(t("errors.upload_both_image_audio"))
             }
 
             const formData = new FormData()
@@ -75,9 +75,9 @@ export const AddSongDialog = () => {
                 image: null
             })
 
-            toast.success("Song added successfully")
+            toast.success(t("songs.song_created"))
         } catch (error: any) {
-            toast.error("Failed to add song: " + error.response.data.message)
+            toast.error(t("errors.song_failed") + error.response.data.message)
         }
         finally {
             setIsLoading(false)
@@ -182,7 +182,7 @@ export const AddSongDialog = () => {
                             onValueChange={(value) => setNewSong({ ...newSong, album: value })}
                         >
                             <SelectTrigger className='bg-zinc-800 border-zinc-700'>
-                                <SelectValue placeholder="Select album" />
+                                <SelectValue placeholder={t("ui.select_album_placeholder")} />
                             </SelectTrigger>
                             <SelectContent className='bg-zinc-800 border-zinc-800' >
                                 <SelectItem value='none'>{t("songs.no_album_single")}</SelectItem>
